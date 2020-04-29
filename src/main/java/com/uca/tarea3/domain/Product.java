@@ -4,11 +4,11 @@ public class Product {
 	
 	private Integer id;
 	private String nombre;
-	private Integer cantidad;
+	private String cantidad;
 	
 	public Product() {}
 	
-	public Product(Integer id, String nombre, Integer cantidad) {
+	public Product(Integer id, String nombre, String cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -27,10 +27,10 @@ public class Product {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Integer getCantidad() {
+	public String getCantidad() {
 		return cantidad;
 	}
-	public void setCantidad(Integer cantidad) {
+	public void setCantidad(String cantidad) {
 		this.cantidad = cantidad;
 	}
 }

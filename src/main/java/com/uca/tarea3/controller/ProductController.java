@@ -21,16 +21,16 @@ public class ProductController {
 	public ModelAndView compraProducto() {
 		ModelAndView mav = new ModelAndView();
 		
-		productos.add(new Product(0, "Animal Crossing", 30));
-		productos.add(new Product(1, "Super Smash Bross Ultimate", 50));
-		productos.add(new Product(2, "Mario Kart 8 DELUXE", 6));
-		productos.add(new Product(3, "The legend of Zelda: Breath of the wild", 80));
-		productos.add(new Product(4, "Super Mario Odyssey", 45));
-		productos.add(new Product(5, "Xenoblade Chronicles 2", 20));
-		productos.add(new Product(6, "Luigui's Mansion 3", 25));
-		productos.add(new Product(7, "Splatoon 2", 15));
-		productos.add(new Product(8, "Super Mario Maker 2", 35));
-		productos.add(new Product(9, "Fire Emblem: Three Houses", 40));
+		productos.add(new Product(0, "Animal Crossing", "30"));
+		productos.add(new Product(1, "Super Smash Bross Ultimate", "50"));
+		productos.add(new Product(2, "Mario Kart 8 DELUXE", "6"));
+		productos.add(new Product(3, "The legend of Zelda: Breath of the wild", "80"));
+		productos.add(new Product(4, "Super Mario Odyssey", "45"));
+		productos.add(new Product(5, "Xenoblade Chronicles 2", "20"));
+		productos.add(new Product(6, "Luigui's Mansion 3", "25"));
+		productos.add(new Product(7, "Splatoon 2", "15"));
+		productos.add(new Product(8, "Super Mario Maker 2", "35"));
+		productos.add(new Product(9, "Fire Emblem: Three Houses", "40"));
 		
 		
 		mav.setViewName("productos");
@@ -44,7 +44,7 @@ public class ProductController {
 	@PostMapping("/validar")
 	public ModelAndView validar(Product product) {
 		ModelAndView mav = new ModelAndView();
-		if(productos.get(product.getId()).getCantidad() >= product.getCantidad()) {
+		if(Integer.parseInt(productos.get(product.getId()).getCantidad()) >= Integer.parseInt(product.getCantidad())) {
 			mav.setViewName("compra");
 		}
 		else {
